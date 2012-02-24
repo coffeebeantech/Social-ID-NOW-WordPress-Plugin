@@ -7,10 +7,10 @@ Version: 1.0
 Author URI: http://www.socialidnow.com/
 */
 
-class SocialId {
+class SocialID {
 
   // params - id, size
-  function social_id_badge( $atts ) {
+  function get_social_id( $atts ) {
     $size = $atts['size'] ? $atts['size'] : 'large';  
 
     return !$atts['id'] ? "" : "<script src='http://socialid.local:3000/javascripts/badge.js' type='text/javascript'></script>
@@ -23,9 +23,10 @@ class SocialId {
                                   //]]>
                                 </script>";
   }
+  function social_id( $atts ) { echo get_social_id( $atts ); }
 
   // params - group_url, size, width, height 
-  function group_badge( $atts ) {
+  function get_social_id_group( $atts ) {
     $default_styles = array(
       'small'  => array('width' => 350, 'height' => 200),
       'normal' => array('width' => 560, 'height' => 430),
@@ -54,10 +55,11 @@ class SocialId {
                                           //]]>
                                         </script>";
   }
+  function social_id_group( $atts ) { echo social_id_group( $atts ); }
 
 }
 
-add_shortcode( 'social_id_badge', array('SocialId', 'social_id_badge') );
-add_shortcode( 'group_badge', array('SocialId', 'group_badge') );
+add_shortcode( 'social_id', array('SocialID', 'get_social_id') );
+add_shortcode( 'social_id_group', array('SocialID', 'get_social_id_group') );
 
 ?>
