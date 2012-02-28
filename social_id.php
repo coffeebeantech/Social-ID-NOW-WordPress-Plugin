@@ -13,7 +13,7 @@ class SocialID {
   function get_social_id( $atts ) {
     $size = $atts['size'] ? $atts['size'] : 'large';  
 
-    return !$atts['id'] ? "" : "<script src='http://socialid.local:3000/javascripts/badge.js' type='text/javascript'></script>
+    return !$atts['id'] ? "" : "<script src='http://www.socialidnow.com/javascripts/badge.js' type='text/javascript'></script>
                                 <div class='social-id-badge' id='sid_badge_".$atts['id']."_".$atts['size']."' style='display: inline-block; margin: 10px'>
                                   <p></p>
                                 </div>
@@ -34,7 +34,8 @@ class SocialID {
     );
     $width  = $atts['width']  ? $atts['width']  : $default_styles[$atts['size']]['width'];
     $height = $atts['height'] ? $atts['height'] : $default_styles[$atts['size']]['height'];
-    $size = $atts['size'] ? $atts['size'] : 'small';  
+    $size = $atts['size'] ? $atts['size'] : 'small';
+    $join = $atts['join_button'] ? $atts['join_button'] : 'yes';
 
     return !$atts['group_url'] ? "" : "<div class='group-badge' id='group_badge_".$atts['group_url']."_".$size."'style='display: inline-block; margin: 10px'>
                                           <p></p>
@@ -49,7 +50,7 @@ class SocialID {
                                               var iframe = d.getElementById('group_badge_".$atts['group_url']."_".$size."').appendChild(i),
                                                   doc = iframe.contentWindow.document;
                                               iframe.style.cssText = 'width: ".$width."px; height: ".$height."px';
-                                              doc.open().write('<body onload=document.location=\"http://socialid.local:3000/groups/".$atts['group_url']."/badges/".$size."\">');
+                                              doc.open().write('<body onload=document.location=\"http://www.socialidnow.com/groups/".$atts['group_url']."/badges/".$size."?join_button=".$join."\">');
                                               doc.close();
                                             })(document);
                                           //]]>
