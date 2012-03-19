@@ -3,7 +3,7 @@ Contributors: mateus.pinheiro, karreiro
 Tags: social-id, social, identity, embed
 Requires at least: 2.5
 Tested up to: 3.3.1
-Stable tag: 1.0
+Stable tag: 1.1
 
 This helps you embeding your Social-ID and Groups on your WordPress. You can create a Social-ID and Group at http://www.socialidnow.com
 
@@ -17,7 +17,7 @@ Social-ID NOW™ is a place were you can create your own Social-ID, an online id
 
 > Once you get your numeric ID, use the syntax below to include it within content
 >
-> `[social_id 17]`
+> `[social_id id=17]`
 >
 > Or this syntax to include it within your PHP code
 >
@@ -29,10 +29,43 @@ Social-ID NOW™ is a place were you can create your own Social-ID, an online id
 
 > Once you know the URL name, use the syntax below to include it within content
 >
-> `[social_id_group coffeebean]`
+> `[social_id_group group_url=coffeebean]`
+>
 > Or this sytnax to include it within your PHP code
 >
 > `SocialID::social_id_group("coffeebean");`
+
+**Changing width and height**
+> You can choose from three different layouts by using the syntax below
+> 
+> `[social_id_group group_url=coffeebean size=normal]`
+>
+> The possible values are:
+>
+> *small*: Shows the title and pictures only.
+>
+> *normal*: Shows group image and description with people pictures.
+>
+> *large*: Shows group image, description and a badge for each person. 
+
+
+**Customizing the look**
+> You can use several parameters to choose how your embed will look like. They are
+>
+> `[social_id_group group_url=coffeebean header=no]`
+> This will hide the header with the group image and description
+>
+> `[social_id_group group_url=coffeebean join_button=no]`
+> If the group is open this will hide the Join button that would normally show
+>
+> `[social_id_group group_url=coffeebean join_button_position=middle]`
+> If the group is open and the Join Button is showing, this parameter will define where the button goes. The possible values are: top, middle, bottom.
+>
+> `[social_id_group group_url=coffeebean pictures=no]`
+> Hides all the pictures, leaving only the header and group image
+>
+> `[social_id_group group_url=coffeebean width=600 height=400]`
+> This will change the width and height to specified values
 
 **Creating Social-IDs and Groups**
 
@@ -50,13 +83,13 @@ Social-ID NOW™ is a place were you can create your own Social-ID, an online id
 
 == Frequently Asked Questions ==
 
-= Do I need an account on Social-ID NOW™ to use this plugin? =
+= Do I need an account on Social-ID NOW™ to use this plugin? = 
 
-No. All you need to know is the Group name or Social-ID numeric ID. But for creating new groups and Social-IDs, you still need a Social-ID account.
+No. All you need to know is the Group name or Social-ID numeric ID. But for creating new groups and Social-IDs, you do need a Social-ID account.
 
 = Can I create groups and Social-IDs from inside this plugin? =
 
-Not now. We are looking forward to implement this on our plugin. If you like this, go to our GetSatisfaction page GetSatisfaction page](https://getsatisfaction.com/socialidnow "Get Satisfaction Social-ID NOW™ Community") and thumbs up this idea!
+Not now. We are looking forward to implement this on our plugin. If you like this, go to our [GetSatisfaction page](https://getsatisfaction.com/socialidnow "Get Satisfaction Social-ID NOW™ Community") and thumbs up this idea!
 
 
 == Changelog ==
